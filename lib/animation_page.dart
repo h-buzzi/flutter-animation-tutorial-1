@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:animation_tutorial_1/animated_widget.dart';
+import 'package:animation_tutorial_1/rotating_transition_builder.dart';
 import 'package:flutter/material.dart';
 
 class AnimationPage extends StatefulWidget {
@@ -40,7 +40,11 @@ class _AnimationPageState extends State<AnimationPage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: RotatingImage(animation: animation));
+    return Scaffold(
+        body: RotatingTransition(
+      angle: animation,
+      child: const GithubImage(),
+    ));
   }
 
   @override
