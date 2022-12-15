@@ -28,9 +28,6 @@ class _AnimationPageState extends State<AnimationPage>
         reverseCurve: Curves.easeOut);
     animation =
         Tween<double>(begin: 0, end: 2 * math.pi).animate(curvedAnimation)
-          ..addListener(() {
-            setState(() {});
-          })
           ..addStatusListener((status) {
             if (status == AnimationStatus.completed) {
               animController.reverse();
