@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:animation_tutorial_1/animated_widget.dart';
 import 'package:flutter/material.dart';
 
 class AnimationPage extends StatefulWidget {
@@ -42,15 +43,7 @@ class _AnimationPageState extends State<AnimationPage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Transform.rotate(
-      angle: animation.value,
-      child: Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.all(30),
-        child: Image.asset('../assets/github.png'),
-      ),
-    ));
+    return Scaffold(body: RotatingImage(animation: animation));
   }
 
   @override
